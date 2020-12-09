@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace Lesson10._2
 {
-    class MyList<T> : IMyList<T>
+    public class MyList<T> : IMyList<T>
     {
         private T[] array; //Создание массива с типом указателя места заполнения типом
         public MyList()
@@ -19,9 +15,14 @@ namespace Lesson10._2
             get => array[index];
             set => array[index] = value;
         }
-
+        /// <summary>
+        /// Возвращает число элементов.
+        /// </summary>
         public int Count => array.Count();
-
+        /// <summary>
+        /// Добавлает элемент в лист.
+        /// </summary>
+        /// <param name="a">Добавляемый элемент.</param>
         public void Add(T a)
         {
             T[] tmpArray = new T[array.Length + 1];
@@ -32,15 +33,19 @@ namespace Lesson10._2
             tmpArray[array.Length] = a;
             array = tmpArray;
         }
-
+        /// <summary>
+        /// Очищает лист.
+        /// </summary>
         public void Clear()
         {
             array = new T[0];
         }
-
-        public bool Contains(T item)
-        {
-            return array.Contains(item);
-        }
+        /// <summary>
+        /// Определяет, содержит ли последовательность указанный элемент.
+        /// </summary>
+        /// <param name="item">"Элемент проверки.</param>
+        /// <returns>true, если такой элемент есть, иначе false.</returns>
+        public bool Contains(T item) => array.Contains(item); 
+       
     }
 }

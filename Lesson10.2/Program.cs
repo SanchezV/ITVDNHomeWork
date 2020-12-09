@@ -35,6 +35,12 @@ namespace Lesson10._2
             {                
                 Console.WriteLine($"Элемент №{i} = {array[i]}");
             }
+            int[] mass = array.GetArray();
+            Console.WriteLine("Работа расширающего метода:");
+            foreach (var item in mass)
+            {
+                Console.WriteLine(item);
+            }
             array.Clear();
             Console.WriteLine("После очистки:");
             for (int i = 0; i < array.Count; i++)
