@@ -22,6 +22,7 @@ namespace ITVDNHomeWork
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("HelloFromArtem");
         }
     }
 }
